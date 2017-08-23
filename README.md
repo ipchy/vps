@@ -1,2 +1,2 @@
 # vps
-Record some shells for managing vps
+Save some scripts to manage VPS
