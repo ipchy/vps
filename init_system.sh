@@ -20,8 +20,8 @@ echo -e ${green}set timezome to Asia/Shanghai${plain}
 mv /etc/localtime{,.bak} && ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 # Modify the SSH port and Set up SSH-key
 echo -e ${green}change ssh port and set ssh-key${plain}
-read -p "Please input ssh port:" $ssh_port
-read -p "Please input ssh-key:"  $ssh_key
+read -p "Please input ssh port:" ssh_port
+read -p "Please input ssh-key:"  ssh_key
 sed -i "s/Port \(.*\)/Port $ssh_port/" /etc/ssh/sshd_config
 sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
 mkdir ~/.ssh && chmod 700 ~/.ssh 
