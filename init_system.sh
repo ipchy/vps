@@ -24,7 +24,7 @@ read -p "Please input ssh port:" ssh_port
 read -p "Please input ssh-key:"  ssh_key
 sed -i "s/Port \(.*\)/Port $ssh_port/" /etc/ssh/sshd_config
 sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/' /etc/ssh/sshd_config
-mkdir ~/.ssh && chmod 700 ~/.ssh 
+mkdir -p ~/.ssh && chmod 700 ~/.ssh 
 echo "$ssh_key" >> ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 echo -e ${green}Please relogin you system by ssh${plain}
